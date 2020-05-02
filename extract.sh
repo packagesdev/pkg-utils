@@ -21,14 +21,14 @@ temporaryDirectory=$(/usr/bin/mktemp -d "/var/tmp/${distributionNameWithExtensio
 
 cd "${temporaryDirectory}/expanded"
 
-mkdir ../extracted
+/bin/mkdir ../extracted
 
-find . -type d -name '*.pkg' | while read FILE ; do
+/usr/bin/find . -type d -name '*.pkg' | while read FILE ; do
 	/usr/sbin/pkgutil --flatten "${FILE}" "${temporaryDirectory}/extracted/${FILE}"
 done
 
 cd ../extracted
 
-open .
+/usr/bin/open .
 
 exit 0
