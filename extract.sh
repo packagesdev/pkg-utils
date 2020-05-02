@@ -8,14 +8,14 @@ fi
 if [ -f "$1" ]; then
     echo "Extracting packages from $1"
 else 
-    echo "$1 does not exit"
+    echo "$1 does not exist"
     
     exit 1
 fi
 
 distributionNameWithExtension=`/usr/bin/basename $1`
 
-temporaryDirectory=$(/usr/bin/mktemp -d /var/tmp/${distributionNameWithExtension}.XXXXXXXXX)
+temporaryDirectory=$(/usr/bin/mktemp -d "/var/tmp/${distributionNameWithExtension}".XXXXXXXXX)
 
 /usr/sbin/pkgutil --expand "$1" "${temporaryDirectory}/expanded/"
 
