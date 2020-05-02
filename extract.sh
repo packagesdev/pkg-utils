@@ -5,7 +5,6 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
-FILE=/etc/resolv.conf
 if [ -f "$1" ]; then
     echo "Extracting packages from $1"
 else 
